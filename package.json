@@ -1,0 +1,51 @@
+{
+  "name": "@gog-presale/monorepo",
+  "version": "0.0.4",
+  "keywords": [
+    "ethereum"
+  ],
+  "private": true,
+  "scripts": {
+    "accounts": "yarn workspace @gog-presale/hardhat accounts",
+    "backend:start": "yarn workspace @gog-presale/backend start",
+    "balance": "yarn workspace @gog-presale/hardhat balance",
+    "build": "yarn next:build",
+    "chain": "yarn workspace @gog-presale/hardhat chain",
+    "compile": "yarn workspace @gog-presale/hardhat compile",
+    "deploy": "yarn workspace @gog-presale/hardhat deploy",
+    "deploy-rinkeby": "yarn workspace @gog-presale/hardhat deploy-rinkeby",
+    "deploy-nft-ropsten": "yarn workspace @gog-presale/hardhat deploy-nft-ropsten",
+    "deploy-mainnet": "yarn workspace @gog-presale/hardhat deploy-mainnet",
+    "deploy-mainnet-nft": "yarn workspace @gog-presale/hardhat deploy-nft-mainnet",
+    "dev": "yarn next:dev",
+    "lint": "yarn workspace @gog-presale/backend lint && yarn workspace @gog-presale/hardhat lint && yarn workspace @gog-presale/next-app lint && yarn workspace @gog-presale/admin-app lint",
+    "next:build": "yarn workspace @gog-presale/next-app build",
+    "next:build:withPrebuiltContracts": "yarn workspace @gog-presale/next-app build:withPrebuiltContracts",
+    "next:dev": "yarn workspace @gog-presale/next-app dev",
+    "next:start": "yarn workspace @gog-presale/next-app start",
+    "send": "yarn workspace @gog-presale/hardhat send",
+    "start": "yarn next:start",
+    "test": "yarn workspace @gog-presale/hardhat test",
+    "watch": "yarn workspace @gog-presale/hardhat watch"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "devDependencies": {
+    "eslint": "^7.24.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-babel": "^5.3.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.22.0",
+    "hardhat-gas-reporter": "^1.0.4"
+  },
+  "engines": {
+    "node": "14.x.x",
+    "yarn": "1.22.x"
+  }
+}
