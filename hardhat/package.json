@@ -1,0 +1,49 @@
+{
+  "name": "@gog-presale/hardhat",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "bip39": "^2.5.0",
+    "eslint": "^7.24.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-babel": "^5.3.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "ethereumjs-util": "^6.2.1",
+    "ethereumjs-wallet": "^0.6.5",
+    "lodash": "^4.17.21"
+  },
+  "dependencies": {
+    "@chainlink/contracts": "^0.0.12",
+    "@nomiclabs/hardhat-ethers": "^2.0.2",
+    "@nomiclabs/hardhat-etherscan": "^2.1.2",
+    "@nomiclabs/hardhat-waffle": "^2.0.1",
+    "@openzeppelin/contracts": "^4.0.0-beta.1",
+    "chai": "^4.2.0",
+    "chalk": "^4.1.0",
+    "ethereum-waffle": "^3.1.1",
+    "ethers": "^5.0.17",
+    "hardhat": "^2.1.1",
+    "hardhat-gas-reporter": "^1.0.4",
+    "lodash": "^4.17.21",
+    "node-watch": "^0.7.0",
+    "qrcode-terminal": "^0.12.0",
+    "ramda": "^0.27.1"
+  },
+  "scripts": {
+    "accounts": "hardhat accounts",
+    "balance": "hardhat balance",
+    "chain": "hardhat node",
+    "compile": "hardhat compile",
+    "deploy": "hardhat run scripts/deploy.js && hardhat run scripts/publish.js",
+    "deploy-rinkeby": "hardhat run --network rinkeby scripts/deploy.js && hardhat run --network rinkeby scripts/publish.js",
+    "deploy-nft-ropsten": "hardhat run --network ropsten scripts/deploy-nft.js && hardhat run --network ropsten scripts/publish-nft.js",
+    "deploy-mainnet": "hardhat run --network mainnet scripts/deploy.js && hardhat run --network mainnet scripts/publish.js",
+    "deploy-nft-mainnet": "hardhat run --network mainnet scripts/deploy-nft.js && hardhat run --network mainnet scripts/publish-nft.js",
+    "lint": "eslint \"**/*.{js,ts}\" --color",
+    "send": "hardhat send",
+    "test": "hardhat test --network hardhat",
+    "watch": "node scripts/watch.js"
+  }
+}
