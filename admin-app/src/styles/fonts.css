@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'Editor';
+  src: url("/fonts/Editor-Regular.otf") format("opentype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Editor';
+  src: url("/fonts/Editor-Bold.otf") format("opentype");
+  font-display: swap;
+  font-weight: bold;
+}
