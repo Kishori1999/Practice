@@ -1,0 +1,65 @@
+name: CI&CD
+on: [push, workflow_dispatch]
+jobs:
+  ci:
+    name: Run CI
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "14.x"
+      - name: install deps
+        run: yarn install
+      - name: lint
+        run: yarn workspace @gog-presale/next-app lint
+      - name: tests
+        run: yarn test
+
+  # DevDeployBackend:
+  #   name: Deploy backend to heroku dev
+  #   if: github.event.ref == 'refs/heads/development'
+  #   needs: ci
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - uses: AkhileshNS/heroku-deploy@v3.12.12
+  #       with:
+  #         buildpack: "https://github.com/lstoll/heroku-buildpack-monorepo"
+  #         heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+  #         heroku_app_name: "dev-gog-presale"
+  #         heroku_email: "marc.griffiths@immutable.com"
+  #   environment:
+  #     name: Development
+
+  StagingDeployBackend:
+    name: Deploy backend to heroku staging
+    if: github.event.ref == 'refs/heads/staging'
+    needs: ci
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: AkhileshNS/heroku-deploy@v3.12.12
+        with:
+          buildpack: "https://github.com/lstoll/heroku-buildpack-monorepo"
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "staging-gog-presale"
+          heroku_email: "marc.griffiths@immutable.com"
+    environment:
+      name: Staging
+
+  ProdDeployBackend:
+    name: Deploy backend to heroku prod
+    if: github.event.ref == 'refs/heads/main'
+    needs: ci
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: AkhileshNS/heroku-deploy@v3.12.12
+        with:
+          buildpack: "https://github.com/lstoll/heroku-buildpack-monorepo"
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "prod-gog-presale"
+          heroku_email: "marc.griffiths@immutable.com"
+    environment:
+      name: Production
