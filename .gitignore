@@ -1,41 +1,8 @@
-**/aws.json
-
-packages/admin-app/contracts
-
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-packages/hardhat/artifacts
-packages/hardhat/cache
-
-packages/next-app/contracts
-
-docker/**/data
-
-# dependencies
-**/node_modules
-/.pnp
-.pnp.js
-
-# testing
-coverage
-
-# production
-build
-
-# misc
 .DS_Store
-.env*
-
-# debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-.idea
-.vscode
-
-# Code not yet used to ignore for now
-docker
-packages/subgraph
-
-
-unused
+.nodemonignore
+npm-debug.log
+apidocs/
+config/contracts/development/
+dist/
+node_modules/
+yarn-error.log
