@@ -1,55 +1,21 @@
-# gog-presale
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-> Presale solution for Guild of Guardians
-
----
-
-## quickstart
-
+## Run it
 ```bash
-git clone https://github.com/immutable/gog-presale.git
-
-cd gog-presale
+npm run dev
+# or
+yarn dev
 ```
 
-```bash
+Open [http://localhost:3001](http://localhost:3001) with your browser to see the result.
 
-yarn install
+## Keys in development mode
+Create dev.js file in /config folder
 
-```
+export default {
+};
 
-```bash
+## Running on the different networks
 
-yarn start
+`env NEXT_PUBLIC_DEFAULT_NETWORK=rinkeby yarn dev`
 
-```
-
-> in a second terminal window:
-
-```bash
-
-yarn chain
-
-```
-
-> in a third terminal window:
-
-```bash
-
-yarn deploy
-
-```
-
-> run unit tests with:
-
-```bash
-
-yarn test
-
-```
-
-## Deploy to rinkeby
-
-```
-env SYSTEM_PRIVATE_KEY=... RINKEBY_PRIVATE_KEY=... yarn deploy-rinkeby
-```
